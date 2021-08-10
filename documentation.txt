@@ -1,0 +1,25 @@
+FILES:
+1.Game init: model.py
+2.Cards: card1.py, card2.py etc...
+3.Podesavanja: settings.txt
+4.Podesavanja karata: cards.txt
+
+U glavnom fajlu model.py ce biti glavni objekat 'Game' i 'Player'. Za jednu igru, bice potrebno registrovati game.
+Za svakog igraca, mora se napraviti novi objekat 'Player' i povezati sa igrom.
+Moguce je registrovati kartu tako sto ce se njen fajl upisati u fajl 'cards.txt'.
+
+Lista eventa koje je moguce hookovati:
+PRE:
+- Izvlacenja karte | Povratne informacije: player, karta
+- Napada | (napadac, napadnut)
+- Napada na odredjenu kartu | (napadac, napadnut)
+-
+POST:
+- Summona
+- Napada
+
+attack function flow:
+Provera da li je karta face-up ili f-down.
+Provera napada, sta ce se desiti
+Izvrsavanje eventa: flip ako ima, global attack, card attack, card attacked, destroyed ako ima
+Ako eventi dopustaju nastavlja se napad tj. izvrsava se ono sto se treba desiti(unistavanje, inflict itd)
